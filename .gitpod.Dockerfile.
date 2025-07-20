@@ -1,0 +1,23 @@
+FROM gitpod/workspace-full:latest
+
+# نصب پکیج‌های مورد نیاز
+RUN sudo apt update && sudo apt install -y \
+    gfortran \
+    libopenmpi-dev \
+    openmpi-bin \
+    python3-pip \
+    python3-dev \
+    libfftw3-dev \
+    libgsl-dev \
+    git
+
+# نصب CLASS
+RUN git clone https://github.com/lesgourg/class_public.git && \
+    cd class_public && \
+    make
+
+# نصب MontePython
+RUN git clone https://github.com/brinckmann/montepython_public.git && \
+    cd montepython_public && \
+    pip install -r requirements.txt && \
+    pip install .
