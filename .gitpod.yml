@@ -5,4 +5,8 @@ tasks:
   - name: Start environment
     init: echo "Welcome to MontePython + CLASS environment on Gitpod!"
     command: |
-      ls
+      cd /workspace/class_public
+      ./class
+      cd /workspace/montepython_public
+      python3 montepython/MontePython.py -h
+
