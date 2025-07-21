@@ -1,0 +1,10 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Start environment
+    init: echo "Welcome to MontePython + CLASS environment on Gitpod!"
+    command: |
+      ls /workspace
+      echo "CLASS installed at /workspace/class_public"
+      echo "MontePython installed at /workspace/montepython_public"
